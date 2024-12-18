@@ -4,7 +4,7 @@ services:
   php:
     image: php:8.2-apache
     container_name: php82
-    ports: 82:80
+    ports: 8741:80
     volumes:
       - .:/var/www/html
     build:
@@ -21,7 +21,10 @@ services:
       - ./mysql:/var/lib/mysql
     phpmyadmin:
       image: phpmyadmin/phpmyadmin
+      restart: always
       container_name: phpmyadmin
+      depends_on:
+        - db
       environment:
         PMA_ARBITRARY: 1
         PMA_HOST: db
