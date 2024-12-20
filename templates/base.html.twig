@@ -16,12 +16,20 @@
             <h1 id="header-title">Home Design Symposium</h1>
             <nav id="header-nav-right">
                 <ul>
-                    <li><a href="register">Register</a></li>
-                    <li><a href="login">Login</a></li>
+                    {% if app.user %}
+                    <li><a href="{{path('app_profile')}}">Profile</a></li>
+                    {% else %}
+                    <li><a href="{{path('app_register')}}">Register</a></li>
+                    <li><a href="{{path('app_login')}}">Login</a></li>
+                    {% endif %}
+                    
                 </ul>
             </nav>
         </header>
         <main>
+            {% for flash in app.flashes('success') %}
+                <div class="alert alert-success">{{ flash }}</div>
+            {% endfor %}
             {% block body %}{% endblock %}
         </main>
         <footer>
