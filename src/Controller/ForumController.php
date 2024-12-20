@@ -6,9 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+#[Route('/', name: 'forum_')]
 class ForumController extends AbstractController
 {
-    #[Route('/forum', name: 'app_forum')]
+    #[Route('forum', name: 'index')]
     public function index(): Response
     {
         return $this->render('forum/index.html.twig', [
