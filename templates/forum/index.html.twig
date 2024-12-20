@@ -5,12 +5,17 @@
 {% block body %}
 
 <div id="forum-main-wrapper">
+    <div id="forum-main-links">
+        <a class="return-btn" href="{{path('app_home')}}">Retour</a>
+    </div>
     <h2>Forum main page</h2>
-    <nav id="forum-main-navigation">
-        <ul>
-            <li><a href="/news">News</a></li>
-            <li><a href="/categories">Categories</a></li>
-        </ul>
-    </nav>
+    <div id="forum-main">
+        <nav id="forum-main-navigation">
+            <ul>
+                <li><a href="/news">News</a></li>
+                <li><a href="/categories">Categories</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 {% endblock %}
