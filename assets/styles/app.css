@@ -10,6 +10,16 @@ body {
     min-height: 100dvh;
     font-family: 'Roboto Condensed';
     position: relative;
+    min-width: fit-content;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 main {
@@ -48,20 +58,25 @@ li {
     list-style-type: none;
 }
 
-#home-wrapper {
+#home {
+    margin: 0rem 3rem;
+}
+
+#home h2 {
+    margin-top: 2rem;
+    margin-left: 4rem;
+    font-size: 30px;
+}
+
+#home-navigation {
     width: fit-content;
-    margin: 7rem 4rem;
+    margin: 3rem 4rem;
     padding: 1.50rem 25rem 1.50rem 3rem;
     background-color: #ffffff;
     border-radius: 16px;
 }
 
-#home-wrapper h2 {
-    margin: 1rem;
-    font-size: 30px;
-}
-
-#home-wrapper li {
+#home-navigation li {
     margin: 2.5rem 1rem;
     padding: 1.50rem 25rem 1.50rem 1rem;
     font-size: 24px;
@@ -69,25 +84,57 @@ li {
     border-radius: 10px;
 }
 
-#home-wrapper a {
+#home-navigation a {
     color: black;
     text-decoration: none;
 }
 
-#forum-main-wrapper {
-    width: fit-content;
-    margin: 7rem 4rem;
-    padding: 1.50rem 25rem 1.50rem 3rem;
-    background-color: #ffffff;
-    border-radius: 16px;
+#home-banner-wrapper {
+    max-height: 600px;
+    position: relative;
+}
+
+.home-banner-img {
+    height: 600px;
+    width: 100%;
+    object-position: bottom;
+    object-fit: cover;
+}
+
+#home-banner-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(103, 103, 103, 0.266);
+    height: 100%;
+    width: 100%;
+}
+
+#home-banner-background p {
+    font-size: 26px;
+    font-style: italic;
+    color: #ffffff;
 }
 
 #forum-main-wrapper h2 {
-    margin: 1rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
     font-size: 30px;
 }
 
-#forum-main-wrapper li {
+#forum-main {
+    width: fit-content;
+    margin: 3rem 4rem;
+    padding: 1.50rem 25rem 1.50rem 3rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+#forum-main li {
     margin: 2.5rem 1rem;
     padding: 1.50rem 25rem 1.50rem 1rem;
     font-size: 24px;
@@ -95,7 +142,20 @@ li {
     border-radius: 10px;
 }
 
-#forum-main-wrapper a {
+#forum-main a {
     color: black;
     text-decoration: none;
+}
+
+#forum-main-links {
+    margin: 2rem 0rem;
+}
+
+.return-btn {
+    margin: 2rem 4rem;
+    padding: 1rem 2rem;
+    background-color: rgb(217, 217, 217);
+    border-radius: 5px;
+    color: black;
+    font-size: large;
 }
