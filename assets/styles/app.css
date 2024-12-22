@@ -190,3 +190,15 @@ form[name="registration_form"] button[type="submit"] {
     cursor: pointer;
     font-size: 16px;
 }
+
+#login-form {
+    margin: 3rem 35rem;
+    padding: 1.50rem 3rem 1.50rem 3rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-content: center;
+}
