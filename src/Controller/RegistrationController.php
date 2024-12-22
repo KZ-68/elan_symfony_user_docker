@@ -31,10 +31,10 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $password_regex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,}$/";
+            /** @var string $plainPassword */
+            $plainPassword = $form->get('plainPassword')->getData();
+            
             if(preg_match($password_regex, $plainPassword)) {
-                /** @var string $plainPassword */
-                $plainPassword = $form->get('plainPassword')->getData();
-
                 // encode the plain password
                 $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
 
@@ -50,12 +50,12 @@ class RegistrationController extends AbstractController
                         ->htmlTemplate('registration/confirmation_email.html.twig')
                 );
 
-                // do anything else you need here, like send an email
-
                 return $this->redirectToRoute('app_home');
             } else {
-                $this->addFlash('error', 'Password strength minimal requirement needed');
-                return $this->redirectToRoute('app_register');
+                $error = 'Password strength minimal requirement needed';
+                return $this->render('registration/register.html.twig', [
+                    'error' => $error,
+                ]);
             }
         }
 
